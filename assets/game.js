@@ -1,4 +1,4 @@
-//Variables for each crystal, will generate random number value
+//Variables for each "crystal", will generate random number value
 var crystal1 = Math.floor((Math.random()* 12)+ 1);
 console.log("crystal 1 is worth " + crystal1);
 
@@ -12,11 +12,11 @@ var crystal4 = Math.floor((Math.random()* 12)+ 1);
 console.log("crystal 4 is worth " + crystal4);
 //variable to hold users score
 var currentScore = 0;
-// Variable that creates the score user tries to get to
+// Variable that creates the goal score
 var wins = 0;
 var losses = 0;
 var computerChoice
-
+//function will make computer choose random number
 function chooseNumber() {
 	computerChoice = Math.floor((Math.random()* 120)+19);
 console.log(computerChoice);
@@ -52,7 +52,7 @@ function startGame() { //function that holds game
 		compareScores();
 	});
  }
-//6. if value === computers number, user wins, game starts over
+//6. if value === computers number, user wins, prompts user to replay
 	function compareScores() {
 	if (currentScore === computerChoice) {
 		alert("YOU WON! Click the replay button to play again");
@@ -60,7 +60,7 @@ function startGame() { //function that holds game
 		$('#wins').text(wins);
 		
 	}
-//7. if value > than computer number, user loses, game starts over
+//7. if value > than computer number, user loses, prompts user to replay
 	else if (currentScore > computerChoice) {
 		alert("YOU LOST! Click the replay button to try again");
 		losses++;
@@ -69,7 +69,7 @@ function startGame() { //function that holds game
 		
 	}
 }
-
+//function for when user clicks the replay button. score resets, "crystals" get new value and computer chooses new goal score
 function replay() {
 	currentScore = 0;
 	crystal1 = Math.floor((Math.random()* 12)+ 1);

@@ -18,7 +18,7 @@ var losses = 0;
 var computerChoice
 //function will make computer choose random number
 function chooseNumber() {
-	computerChoice = Math.floor((Math.random()* 120)+19);
+	computerChoice = Math.floor((Math.random()* 101)+19);
 console.log(computerChoice);
 $('#computerChoice').text(computerChoice);
 }

@@ -4,22 +4,65 @@
 	<title>Crystal Game</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Bigelow+Rules|Combo|Gorditas|Indie+Flower|Nanum+Brush+Script|Peddana" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>Crystal Game</h1>
-	
-	<div>
-		<p id="computerChoice"></p>
+	<div id="header">
+		<div>
+			<h2 id="title">Some of these park goers will add points to your score, click around and try to reach the goal!</h2>
+		</div>
+		<div class="ps">Try and reach this number! 
+			<p id="computerChoice"></p>
+		</div>
+		<div class="ps">Wins: 
+			<p id="wins">0</p>
+		</div>
+		<div class="ps">Losses: 
+			<p id="losses">0</p>
+		</div>
+		<div id="button">
+			<button id="replay" onclick="replay()">Replay</button>
+		</div>
 	</div>
-
-	<img src="assets/images/magiccrystal.gif" id="crystal1">
-	<img src="assets/images/magiccrystal.gif" id="crystal2">
-	<img src="assets/images/magiccrystal.gif" id="crystal3">
-	<img src="assets/images/magiccrystal.gif" id="crystal4">
+	<container>	
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="assets/images/eagle.png" id="eagle">	
+				<img src="assets/images/butterfly.png" id="bfly">
+			</div>
 
 	
+			<div class="col-sm-6">
+				<audio id="bala">
+					<source src="assets/audio/balala.mp3" type="">
+				</audio>
+				<img src="assets/images/bimmax.png" id="marshmallow" onclick="document.getElementById( 'bala').play(); return false;">		
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="assets/images/uni.png" id="unicorn">
+				<audio id="r2">
+					<source src="assets/audio/r2.mp3" type="">
+				</audio>
+				<img src="assets/images/r2d2.png" id="r2d2" onclick="document.getElementById('r2').play(); return false;">
+					
+			</div>
 
+			<div class="col-sm-6">
+				<img src="assets/images/duckboi.png" id="duckboi">
+				<audio id="stewieAudio">
+					<source src="assets/audio/famguy25.wav">
+				</audio>
+				<img src="assets/images/stewie2.png" id="stewie" onclick="document.getElementById('stewieAudio').play(); return false;">
+
+			</div>
+		</div>
+	</container>
 <script type="text/javascript" src="assets/game.js"></script>
 
 </body>

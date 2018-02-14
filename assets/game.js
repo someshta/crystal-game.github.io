@@ -3,58 +3,79 @@ var crystal1 = Math.floor((Math.random()* 12)+ 1);
 console.log("crystal 1 is worth " + crystal1);
 
 var crystal2 = Math.floor((Math.random()* 12)+ 1);
-console.log("crystal 1 is worth " + crystal2);
+console.log("crystal 2 is worth " + crystal2);
 
 var crystal3 = Math.floor((Math.random()* 12)+ 1);
-console.log("crystal 1 is worth " + crystal3);
+console.log("crystal 3 is worth " + crystal3);
 
 var crystal4 = Math.floor((Math.random()* 12)+ 1);
-console.log("crystal 1 is worth " + crystal4);
+console.log("crystal 4 is worth " + crystal4);
 //variable to hold users score
 var currentScore = 0;
 // Variable that creates the score user tries to get to
-var computerChoice = Math.floor((Math.random()* 120)+19);
-console.log(computerChoice);
+var wins = 0;
+var losses = 0;
+var computerChoice
 
-$('#computerChoice').append(computerChoice);
-	
+function chooseNumber() {
+	computerChoice = Math.floor((Math.random()* 120)+19);
+console.log(computerChoice);
+$('#computerChoice').text(computerChoice);
+}
+chooseNumber();
+
 function startGame() { //function that holds game 
 
 // on clicking crystal image- add value to score, alerts score
-	$( '#crystal1' ).on('click', function() {
+	$( '#bfly' ).on('click', function() {
 		currentScore += crystal1;
-		alert(currentScore);
+		alert("Your score is " + currentScore);
 		compareScores();
 
 	});
 
-	$( '#crystal2' ).click(function() {
+	$( '#unicorn' ).click(function() {
 		currentScore += crystal2;
-		alert(currentScore);
+		alert("Your score is " + currentScore);
 		compareScores();
 	});
 
-	$( '#crystal3' ).click(function() {
+	$( '#duckboi' ).click(function() {
 		currentScore += crystal3;
-		alert(currentScore);
+		alert("Your score is " + currentScore);
 		compareScores();
 	});
 
-	$( '#crystal4' ).click(function() {
+	$( '#eagle' ).on('click', function() {
 		currentScore += crystal4;
-		alert(currentScore);
+		alert("Your score is " + currentScore);
 		compareScores();
 	});
  }
 //6. if value === computers number, user wins, game starts over
 	function compareScores() {
 	if (currentScore === computerChoice) {
-		alert("YOU WON!");
+		alert("YOU WON! Click the replay button to play again");
+		wins ++;
+		$('#wins').text(wins);
+		
 	}
 //7. if value > than computer number, user loses, game starts over
 	else if (currentScore > computerChoice) {
-		alert("YOU LOST!");
+		alert("YOU LOST! Click the replay button to try again");
+		losses++;
+		$('#losses').text(losses);
+		
+		
 	}
 }
-		
+
+function replay() {
+	currentScore = 0;
+	crystal1 = Math.floor((Math.random()* 12)+ 1);
+	crystal2 = Math.floor((Math.random()* 12)+ 1);
+	crystal3 = Math.floor((Math.random()* 12)+ 1);
+	crystal4 = Math.floor((Math.random()* 12)+ 1);
+	chooseNumber();
+}		
 startGame();
